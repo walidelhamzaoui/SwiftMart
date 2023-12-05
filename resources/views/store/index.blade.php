@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Shopping</title>
+    <title>SwiftMart</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -49,7 +49,7 @@
                                         
                                             <div class="card-body" id="shop">
                                             
-                                                <h5 class="text-black text-    " style="height:45px">{{ $product->name }}</h5>
+                                                <h5 class="text-black text-    " style="height:fit-content ">{{ $product->name }}</h5>
                                                 <div class="">
                                                 <h4 class="card-text  text-black-50">{{ $product->category->name }}</h4>
                                                 <div class="d-flex justify-content-between align-items-center">
