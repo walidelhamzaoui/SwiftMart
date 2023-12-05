@@ -25,7 +25,7 @@
         <th scope="row">{{$product->id}}</th>
         <th scope="row">{{$product->name}}</th>
         <td class="w-100 fs-6">{{$product->description}}</td>
-        {{-- <td>{{$product->quantity}}</td> --}}
+        <td>{{$product->quantity}}</td>vercel.
         <td>{{$product->price}}$</td>
         <td>{{$product->category->name}}</td>
         <td class="">
