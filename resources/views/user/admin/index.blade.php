@@ -17,8 +17,8 @@
   <tbody>
     @forelse($photos as $photo)
     <tr>
-      <th scope="row">{{$photo->id}}</th>
-      <td> <img src="/storage/{{$photo->photo}}" class=" img-fluid w-50" style="height:150px"></td>
+      <td scope="row">{{$photo->id}}</td>
+      <td> <img src="/storage/{{$photo->photo}}" class=" img-fluid " style="height:250px"></td>
       <td>{{$photo->products_id}} </td>
       
       <td>

@@ -25,12 +25,12 @@
         <th scope="row">{{$product->id}}</th>
         <th scope="row">{{$product->name}}</th>
         <td class="w-100 fs-6">{{$product->description}}</td>
-        <td>{{$product->quantity}}</td>vercel.
+        <td>{{$product->quantity}}</td>
         <td>{{$product->price}}$</td>
         <td>{{$product->category->name}}</td>
         <td class="">
           {{-- @if(isset($product->images) && is_string($product->images)) --}}
-              <img src='storage/{{ $product->image}}' class="img-fluid">
+              <img src='storage/{{ $product->image}}' class="img-fluid"  style="height:fit-content">
           {{-- @endif --}}
       </td>
       <td class="">

@@ -50,6 +50,8 @@ class User extends Authenticatable
     return('dashboard_admin');
     }elseif($this->hasRole('editor')){
         return('dashboard_editor');
+    }else{
+        return('store');
     }
 }
 }

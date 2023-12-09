@@ -8,7 +8,7 @@ background-color: rgb(10, 9, 9);
 input[type="checkbox"]:focus{
 box-shadow: none;
 outline: none;
-
+border: none !important;
 }
 input[type="email"]:focus{
 box-shadow: none;
@@ -20,16 +20,19 @@ box-shadow: none;
 outline: none;
 background-color: white;border: 1px solid black !important;;
 }
-input{
+input[type="email"]{
+border: 1px solid black !important;
+background-color: white}
+input[type="password"]{
 border: 1px solid black !important;
 background-color: white}
 
 </style>
 @section('content')
-<div class="container">
-    <div class="row justify-content-center mt-5">
-        <div class="col-lg-5 col-md-7">
-            <div class="card">
+<div class="container "  >
+    <div class="d-flex  justify-content-center align-items-center  "style="height:650px">
+        <div class="col-lg-5 col-md-7 mt-5 ">
+            <div class="card "style="background-color:white">
                 <div class="mt-3 text-center fs-4 fw-bold">{{ __('Login') }}</div>
 
                 <div class="card-body">

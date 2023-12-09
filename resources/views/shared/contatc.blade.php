@@ -50,24 +50,24 @@ font-size: 15px;text-transform:capitalize
 <div class="mb-4" id="">
 <div class="container d-flex justify-content-lg-center align-items-lg-center  justify-content-md-center align-items-md-center  " >
 <div class="row p-2  " >
-<form class="form-group lh-lg  p-lg-1 p-3 " style="border-radius:20px; border:0px solid black;box-shadow:1px 1px 5px 2px rgba(0, 0, 0, 0.18)">
+<form class="form-group lh-lg  p-lg-1 p-3 " style=" border:0px solid black;box-shadow:1px 1px 5px 2px rgba(0, 0, 0, 0.18)">
 <div class=" gap-3 ">
-<div class="text-center" style="">
+<div class="text-center mb-2 mt-3" style="">
 <h1>Contact Us</h1></div>
 <div class=" d-flex flex-column justify-content-lg-center align-items-lg-center">
-    <div class="form-group  col-lg-10 col-12  ">
+    <div class="form-group  col-lg-10 col-12 mb-2  ">
 <label for="">Name</label>
 <input type="text" class="form-control p-2 " name="full-name"></div>
-<div class="form-group col-lg-10 col-12">
+<div class="form-group col-lg-10 col-12 mb-2">
 <label for="">email</label>
 
 <input type="email" class="form-control p-2" name="email">
 </div></div>
-<div class="form-group col-lg-10 col-12 ms-lg-4">
+<div class="form-group col-lg-10 col-12 ms-lg-4 mb-2">
 <label for="" class="ms-lg-4 ">subject</label>
-<textarea class="form-control textarea ms-lg-4" rows="3" cols="70"></textarea>
+<textarea class="form-control textarea ms-lg-4" rows="4" cols="70"></textarea>
 </div>
-<div class="form-group col-12  mb-2 text-center  mt-2">
+<div class="form-group col-12  mb-2 text-center  mt-3 mb-5">
 <button  class="btn btn-dark mt-2  text-center w-25 fs-5">Send</button>
 </div>
 </div>

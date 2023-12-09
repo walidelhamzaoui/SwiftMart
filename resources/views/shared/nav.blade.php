@@ -13,12 +13,12 @@
                <li> <a class="navbar-brand fs-5" href="{{ url('/') }}"  style="color:#0d0d0e">
                     Home
                  </a></li>
-                <li><a class="navbar-brand  fs-5" href="/#contact" style="color:#0a0a0b">
-                    Contact us
-                 </a></li>
                <li> <a class="navbar-brand fs-5" href="{{ url('/') }}" style="color:#131213">
                     Shopping
                  </a> </li> 
+                 <li><a class="navbar-brand  fs-5" href="/#contact" style="color:#0a0a0b">
+                    Contact us
+                 </a></li>
             </ul>
 
             <!-- Right Side Of Navbar -->
@@ -27,7 +27,7 @@
                 <div class="form-group" style="fit-content">
               
                     
-                    <a href="{{route('cart.index')}}" class="nav-link mt-2 p-lg-2 p-3" style="background-color:rgb(189, 62, 24);color:antiquewhite; border-radius:7px;width:fit-content">
+                    <a href="{{route('cart.index')}}" class="nav-link mt-2 p-lg-2 p-2" style="background-color:black;color:white; border-radius:7px;width:fit-content">
                     
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16" >
                             <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
@@ -39,13 +39,13 @@
                 @guest
                     @if (Route::has('login'))
                         <li class="nav-item ">
-                            <a class="nav-link " href="{{ route('login') }}"><button class="btn text-white" style="background-color:#660F56">{{ __('Login') }}</button></a>
+                            <a class="nav-link " href="{{ route('login') }}"><button class="btn text-black-50 fw-bold fs-5" >{{ __('Login') }}</button></a>
                         </li>
                     @endif 
 
                     @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}"><button class="btn text-white " style="background-color:#AE2D68">{{ __('Register') }}</button></a>
+                            <a class="nav-link" href="{{ route('register') }}"><button class="btn text-black-50 fs-5 fw-bold  " >{{ __('Register') }}</button></a>
                         </li>
                     @endif
                 @else

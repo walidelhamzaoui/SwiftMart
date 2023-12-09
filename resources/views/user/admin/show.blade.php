@@ -1,7 +1,19 @@
 @extends('layouts.storeapp')
-
+<style>
+  input[type="number"]:focus{
+  outline:none;box-shadow:none;
+  border:2px solid black !important;
+  
+  }
+  input[type="number"]{
+  outline:none;box-shadow:none;
+  border:2px solid black !important;
+  
+  }
+  </style>
 @include('shared.nav')
 @include('shared.slidetext')
+
   <div class="container pt-5">
   <div class="row  d-flex  justify-content-center align-items-center ">
   <div class="col-lg-3 col-12    ">
@@ -18,16 +30,16 @@
 
   </div>
   <div class="col-lg-3 col-12  lh-lg ">
-  <h1 class="text-uppercase ">{{ $product->name }}</h1>
-  <h5 >{{ $product->description }}</h5>
+  <h4  class="text-uppercase text-black-50 ">{{ $product->name }}</h4>
+  <h5 class="text-black" >{{ $product->description }}</h5>
   <h4> $ {{ $product->price }} </h4>
-  <h4>{{ $product->quantity }}</h4>
+  {{-- <h4>{{ $product->quantity }}</h4> --}}
   <div><img src="/storage/{{ $product->image }}" class="w-25" style="" ></div>
   {{-- <h5><img src="{{asset( $product->image)}}" class="w-25" style="" ></h5> --}}
   
   <form action="{{route('add.cart',$product)}}" method="Post">
   @csrf
-  <div class="from-group">
+  <div class="from-group ">
   <label for="" class="form-label">quantity</label>
   <input type="number" class="form-control" id="qty"name="qty" value="1">
   <div class="from-group text-end">

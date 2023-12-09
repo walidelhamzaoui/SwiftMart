@@ -3,15 +3,16 @@ $categorieId=\Illuminate\Support\Facades\Request::input('categories')??[];
 
 @endphp
 <style>
-input[type=text]{
+#name{
 /* padding: 10px; */
 background-color: rgb(243, 241, 239);
 /* border: 2px solid rgb(165, 147, 147); */
-
-
+padding: 9px 93px 10px 9px;
+width:350px
 }
 #categories:focus {
     background-color: rgb(243, 241, 239);
+    
 
     box-shadow: none;
     outline: none;
@@ -40,6 +41,10 @@ border:2px solid black;
 background-color: rgb(243, 241, 239);
 
 }
+.btn:focus{
+
+border: none
+}
 .c{
     position: relative;
 }
@@ -47,7 +52,7 @@ background-color: rgb(243, 241, 239);
 position:absolute;
 right:0%;bottom:0%; 
 margin-bottom:12px ;
-margin-right:170px
+margin-right:70px
  
 }
 [type="submit"]:focus {
@@ -58,7 +63,17 @@ margin-right:170px
     border: none;
     background-color: transparent !important;
 }
+/* .removetext{
+display: none;
 
+} */
+#iconrevome{
+
+    position: relative;
+    right: 105px;
+    display: none; 
+    top:10px
+}
 </style>
     
     
@@ -76,29 +91,35 @@ margin-right:170px
             </div> --}}
            
        
-                <div class="form-group  col-lg-5 mt-3 d-flex  justify-content-end col-md-6  c gap-3 ">
+                <div class="form-group  col-lg-3 mt-3 d-flex  justify-content-end col-md-6  c gap-3 ">
                     {{-- <label for="name" class=" fs-6"  style="color:#341671 ">Name</label> --}}
-                        <input type="text" name="name" id="name" class=" form-control p-lg-2 p-2  mt-1 " placeholder="Search " value="{{\Illuminate\Support\Facades\Request::input("name")}}" >
-                       <a href="/#shop"  class="" style="color:rgb(189, 62, 24)"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class=" search bi bi-search" viewBox="0 0 16 16">
+                        <input type="text"  onkeyup="ad()" name="name" id="name" class=" form-control   mt-1 " placeholder="Search " value="{{\Illuminate\Support\Facades\Request::input("name")}}" >
+                       <button class="btn" style="color:rgb(12, 12, 12);border:none background:transparent"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="black" class=" search bi bi-search" viewBox="0 0 16 16">
                             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                          </svg></a>
+                          </svg>
+                        </button>
+                          <div class="" id="iconrevome" onclick="remove1()">
+                              <a href="{{route('store')}}" style="text-dark"><svg  xmlns="http://www.w3.org/2000/svg"  width="20" height="20" fill="black" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                              </svg></a>
+                          </div>
                           
                     
                     
-                        <button class="btn "style="background-color:rgb(189, 62, 24)"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-check2" viewBox="0 0 16 16">
+                        {{-- <button class="btn "style="background-color:rgb(189, 62, 24)"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-check2" viewBox="0 0 16 16">
                             <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-                          </svg></button>
-                        <a href="{{route('store')}}" class="btn  " style="background-color:#AE2D68" onclick="reset()" ><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-trash3" viewBox="0 0 16 16">
+                          </svg></button> --}}
+                        {{-- <a href="{{route('store')}}" class="btn  " style="background-color:#AE2D68" onclick="reset()" ><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-trash3" viewBox="0 0 16 16">
                             <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
-                          </svg></a> 
+                          </svg></a>  --}}
                           </div>
-                          <div class="form-group mt-3 d-flex justify-content-center align-items-center text-start flex-wrap  gap-3">
+                          <div class="form-group mt-3 d-flex justify-content-center align-items-center text-start flex-wrap  gap-4">
                             {{-- <label class="fs-6" style="color:#341671">Category</label> --}}
                             {{-- <div name="categories" id="categories" class="form-select p-2 p-lg-2 rounded-pill"> --}}
                                 {{-- <option value="">Select Category</option> --}}
                                 @foreach($categories as $category)
                                     {{-- <a href="/#shopa" class="btn btn-primary fs-4 mb-1" style="background-color:transparent; border:none"> --}}
-                                        <button type="submit" name="categories"  class="fs-4 mb-1 " value="{{ $category->id }}">
+                                        <button type="submit" name="categories"  class="fs-4 mb-1 text-capitalize " value="{{ $category->id }}">
                                          {{ $category->name }}
                                         </button>
                                     {{-- </a> --}}
@@ -114,5 +135,21 @@ margin-right:170px
             <label class="form-group fs-4">max price</label>
             <input type="number" name="max" value="{{\Illuminate\Support\Facades\Request::input("max")}}"min="{{ $priceoption->minprice}}"  max="{{ $priceoption->maxprice}}"/>
             </div> --}}
+            <script>
+            let name=document.getElementById('name');
+            let iconr=document.getElementById('iconrevome');
+            function ad(){
+            if(name.value===""){
+                iconr.style="display:none"
+            }else{
+                name.style.marginRight = '-40px';
+                iconr.style="display:block";
+            }
+             function remove1(){
+             name.value=="";
+             
+             }
+            }
+            </script>
           
           

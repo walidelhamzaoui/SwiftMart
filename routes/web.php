@@ -29,18 +29,20 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Auth::routes();
-Route::middleware(['auth','admin'])->group(function () {
+Route::middleware(['auth','admin',])->group(function () {
 Route::resource('categories',CategoryController::class);
 Route::resource('products',ProductController::class);
 Route::get('softdelete',[ProductController::class,'softdelete'])->name('softdelete');
 Route::get('deletesoft/{id}',[ProductController::class,'deletesoft'])->name('deletesoft');
-Route::resource('photos',PhotosProductController::class);
+Route::resource('photos',PhotosProductController::class)->except('show');
 Route::get('dashboard/admin',[DashboardController::class,'index'])->name('dashboard_admin');
 Route::get('indexshow/{id}',[DashboardController::class,'indexshow'])->name('showadmin');
 });
 Route::get('/',[StoreController::class,'index'])->name('store');
-// Route::middleware(['auth','editor'])->group(function () {
-// ;});
+Route::middleware(['auth'])->group(function () {
+    Route::resource('photos',PhotosProductController::class)->only('show');
+
+;});
 Route::get('indexshow',[PhotosProductController::class ,'indexshow']);
 Route::get('dashboard/editor',[DashboardEditorController::class,'index'])->name('dashboard_editor');;
 Route::get('dashboard/editor',[DashboardEditorController::class,'index'])->name('dashboard_editor');;
